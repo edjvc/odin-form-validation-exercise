@@ -4,11 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vanilla-vite-template</title>
+  <title>form validation</title>
   <script type="module" src="/src/main.js" defer></script>
 </head>
 
 <body>
+  <form id="myForm" novalidate>
+    <h1>Sign Up</h1>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+      <div class="error" id="emailError"></div>
+    </div>
+    <div>
+      <label for="country">Country</label>
+      <input type="text" id="country" required pattern="^[A-Za-z]*$" />
+      <div class="error" id="countryError"></div>
+    </div>
+    <div>
+      <label for="postal">Postal Code</label>
+      <input type="text" id="postal" required pattern="^[0-9]{5}$" />
+      <div class="error" id="postalError"></div>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" required minlength="6" />
+      <div class="error" id="passwordError"></div>
+    </div>
+    <div>
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" required />
+      <div class="error" id="confirmPasswordError"></div>
+    </div>
+    <button type="submit">Submit</button>
+    <div class="success" id="successMessage"></div>
+  </form>
 </body>
 
 </html>
